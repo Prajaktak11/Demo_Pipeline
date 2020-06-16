@@ -1,3 +1,5 @@
+#!/usr/bin/env 
+
 pipeline {
     agent none 
     stages {
