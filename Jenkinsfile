@@ -1,13 +1,27 @@
 #!/usr/bin/env 
 
 pipeline {
-    agent none 
+    agent any 
     stages {
-        stage('Build') { 
+        stage('Pull Code') {
             steps {
-                echo 'Hello'
-                sh 'python -m py_compile Hello.py' 
-                
+                echo 'Pulling code!'
+                sh 'python -m py_compile Hello.py'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building Code!' 
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing Code!' 
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying Code!' 
             }
         }
     }
